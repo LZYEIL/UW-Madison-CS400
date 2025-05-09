@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Dessert in the Desert Browser Game</title>
+
+    <style>
+      button {
+        color: blanchedalmond;
+        background-color: chocolate;
+        border-color: chocolate;
+        position: absolute;
+        font-size: 16px;
+        border-radius: 8px;
+      }
+
+      button:hover {
+        color: chocolate;
+        background-color: blanchedalmond;
+      }
+
+      p {
+        font-weight: 800;
+      }
+
+      body {
+        background-color: SandyBrown;
+
+      }
+    </style>
+
+
+    <script>
+      function randomizeButtonPositions() {
+        let buttons = document.querySelectorAll("button");
+        buttons.forEach( (b) => {
+          b.style.left = (Math.random()*80+10)+"%";
+          b.style.top = (Math.random()*80+10)+"%";
+        } );
+      }
+
+
+      let score = 0;
+      function handleDessertClick() {
+        randomizeButtonPositions();
+        score++; // Increment score
+        document.querySelector("p").textContent = `Score: ${score}`; // Update display
+      }
+
+      function handleDesertClick() {
+        randomizeButtonPositions();
+        score--;
+        document.querySelector("p").textContent = `Score: ${score}`; // Update display
+      }
+
+    </script>
+
+
+    <meta name="author" content="zli2562">
+  </head>
+  <body onload="randomizeButtonPositions()">
+    <p>Score: 0</p>
+    <button onclick="handleDessertClick()">Dessert</button>
+
+    <button onclick="handleDesertClick()">Desert</button>
+    <button onclick="handleDesertClick()">Desert</button>
+    <button onclick="handleDesertClick()">Desert</button>
+    <button onclick="handleDesertClick()">Desert</button>
+    <button onclick="handleDesertClick()">Desert</button>
+    <button onclick="handleDesertClick()">Desert</button>
+    <button onclick="handleDesertClick()">Desert</button>
+
+  </body>
+</html>
